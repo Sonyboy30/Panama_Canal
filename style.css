@@ -1,0 +1,65 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f7f8fa;
+  margin: 0;
+  color: #222;
+  line-height: 1.6;
+}
+header {
+  background: #004d7a;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a.active { border-bottom: 2px solid yellow; }
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+.hero {
+  background: url('assets/canal-hero.jpg') center/cover no-repeat;
+  color: white;
+  text-shadow: 1px 1px 4px black;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+footer {
+  background: #004d7a;
+  color: white;
+  text-align: center;
+  padding: 0.8rem;
+}
+.card {
+  display: inline-block;
+  background: #d1ecf1;
+  margin: 10px;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.card:hover { transform: scale(1.1); background: #bee5eb; }
+.timeline .year {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  margin: 1rem 0;
+  padding: 1rem;
+  cursor: pointer;
+}
+.timeline .year:hover { background: #ffeeba; }
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover { background: #0056b3; }

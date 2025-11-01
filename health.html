@@ -2,37 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Health & Hygiene | Panama Canal Museum</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <title>Health | Panama Canal Museum</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    img {
+      width: 70%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+  </style>
 </head>
-
 <body>
   <header>
-    <h1>Health & Hygiene</h1>
+    <h1>Health & Sanitation</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="dream.html">The Dream</a>
       <a href="building.html">Building</a>
-      <a href="health.html" class="active">Health</a>
+      <a href="health.html">Health</a>
       <a href="politics.html">Politics</a>
       <a href="legacy.html">Legacy</a>
+      <a href="plaque.html">Plaque</a>
     </nav>
   </header>
 
-  <section>
-    <h2>Fighting Disease</h2>
-    <p>
-      Dr. William Gorgas transformed the Canal Zone into one of the cleanest regions in the tropics. By draining swamps, fumigating homes, and eliminating mosquito breeding grounds, his public health programs eradicated yellow fever and malaria—saving thousands of lives.
-    </p>
+  <main>
+    <p>Yellow fever, malaria, and dysentery made early construction deadly. Under Dr. William Gorgas, sanitation became central to success. His team drained swamps, fumigated homes, and screened windows, eradicating the mosquito that carried yellow fever. By 1906, deaths had plummeted, proving that public health was as vital as engineering.</p>
+    <img src="assets/gorgas.jpg" alt="Dr. William Gorgas and sanitation teams">
+    <p class="caption">Dr. William Gorgas and his sanitation team — Library of Congress</p>
+  </main>
 
-    <button id="toggleMap">Show Mosquito Control Map</button>
-    <img id="diseaseMap" src="assets/gorgas-map.jpg" alt="Gorgas Map" style="display:none;">
-  </section>
-
-  <footer>
-    <p>Built by Arav & Deniz</p>
-  </footer>
+  <footer>Created by Arav & Deniz</footer>
 </body>
 </html>

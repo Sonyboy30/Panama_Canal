@@ -1,5 +1,9 @@
-// === Fade-in effect on scroll ===
-const sections = document.querySelectorAll("section"); 
+// === Fade-In Section on Scroll ===
+const sections = document.querySelectorAll("section");
+
+// Fix 2: Trigger visibility immediately on page load
+sections.forEach(sec => sec.classList.add("visible"));
+
 window.addEventListener("scroll", () => {
   const trigger = window.innerHeight * 0.85;
   sections.forEach(sec => {
@@ -40,7 +44,6 @@ document.querySelectorAll(".image-card img").forEach(img => {
 closeModal.addEventListener("click", () => {
   galleryModal.style.display = "none";
 });
-
 window.addEventListener("click", e => {
   if (e.target === galleryModal) galleryModal.style.display = "none";
 });

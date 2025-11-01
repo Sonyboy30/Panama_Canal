@@ -1,7 +1,7 @@
 // === Fade-In Section on Scroll ===
 const sections = document.querySelectorAll("section");
 
-// Fix 2: Trigger visibility immediately on page load
+// Fix 2: Trigger visibility immediately on page load 
 sections.forEach(sec => sec.classList.add("visible"));
 
 window.addEventListener("scroll", () => {

@@ -1,6 +1,5 @@
-// === Fade-In Section on Scroll ===
+// === Fade-in effect on scroll ===
 const sections = document.querySelectorAll("section");
-
 window.addEventListener("scroll", () => {
   const trigger = window.innerHeight * 0.85;
   sections.forEach(sec => {
@@ -9,35 +8,50 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// === Interactive Timeline ===
+// === Timeline Expansion Animation ===
 document.querySelectorAll(".timeline .event").forEach(event => {
   event.addEventListener("click", () => {
-    alert(event.dataset.detail);
+    event.classList.toggle("active");
   });
 });
 
-// === Toggle Map Image ===
+// === Gallery Modal System ===
+const galleryModal = document.createElement("div");
+galleryModal.id = "galleryModal";
+galleryModal.innerHTML = `
+  <span id="closeModal">&times;</span>
+  <img id="galleryImage" src="">
+  <div id="galleryCaption"></div>
+`;
+document.body.appendChild(galleryModal);
+
+const modalImg = document.getElementById("galleryImage");
+const modalCaption = document.getElementById("galleryCaption");
+const closeModal = document.getElementById("closeModal");
+
+document.querySelectorAll(".image-card img").forEach(img => {
+  img.addEventListener("click", () => {
+    galleryModal.style.display = "flex";
+    modalImg.src = img.src;
+    modalCaption.textContent = img.parentElement.querySelector(".caption").textContent;
+  });
+});
+
+closeModal.addEventListener("click", () => {
+  galleryModal.style.display = "none";
+});
+
+window.addEventListener("click", e => {
+  if (e.target === galleryModal) galleryModal.style.display = "none";
+});
+
+// === Toggle Map (Health Page) ===
 const mapButton = document.getElementById("toggleMap");
 if (mapButton) {
   const map = document.getElementById("diseaseMap");
   mapButton.addEventListener("click", () => {
-    if (map.style.display === "none") {
-      map.style.display = "block";
-      mapButton.innerText = "Hide Mosquito Control Map";
-    } else {
-      map.style.display = "none";
-      mapButton.innerText = "Show Mosquito Control Map";
-    }
+    const show = map.style.display === "none";
+    map.style.display = show ? "block" : "none";
+    mapButton.innerText = show ? "Hide Mosquito Control Map" : "Show Mosquito Control Map";
   });
 }
-
-// === Smooth Scroll for Internal Anchors ===
-document.querySelectorAll("a[href^='#']").forEach(anchor => {
-  anchor.addEventListener("click", e => {
-    e.preventDefault();
-    const target = document.querySelector(anchor.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});

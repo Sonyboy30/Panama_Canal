@@ -1,12 +1,7 @@
 /* === GLOBAL SETTINGS === */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #f4f6fa;
   color: #222;
   overflow-x: hidden;
@@ -24,50 +19,29 @@ header {
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
-
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.3rem;
-}
-
-nav {
-  margin-top: 0.5rem;
-}
-
 nav a {
   color: white;
   margin: 0 10px;
   text-decoration: none;
   font-weight: 600;
   position: relative;
-  transition: color 0.3s;
 }
-
-nav a:hover {
-  color: #ffb703;
-}
-
+nav a:hover { color: #ffb703; }
 nav a::after {
   content: "";
   position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 3px;
+  bottom: -5px; left: 0;
+  width: 0; height: 3px;
   background: #ffb703;
   transition: width 0.3s;
 }
-
-nav a:hover::after,
-nav a.active::after {
-  width: 100%;
-}
+nav a:hover::after, nav a.active::after { width: 100%; }
 
 /* === HERO SECTION === */
 .hero {
   background: url("assets/hero-canal.jpg") center/cover fixed no-repeat;
   color: white;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -76,18 +50,8 @@ nav a.active::after {
   animation: fadeIn 2s ease-in;
   padding: 0 2rem;
 }
-
-.hero h2 {
-  font-size: 2rem;
-  max-width: 900px;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  font-weight: 500;
-}
+.hero h2 { font-size: 2rem; text-align: center; margin-bottom: 1rem; max-width: 900px; }
+.hero p { font-size: 1.2rem; }
 
 /* === MAIN SECTIONS === */
 section {
@@ -98,17 +62,8 @@ section {
   transform: translateY(40px);
   transition: opacity 0.8s, transform 0.8s;
 }
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-section h2 {
-  color: #003459;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
+section.visible { opacity: 1; transform: translateY(0); }
+section h2 { color: #003459; margin-bottom: 1rem; }
 
 /* === IMAGE CARDS === */
 .image-card {
@@ -117,10 +72,10 @@ section h2 {
   margin: 1rem;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
 }
-
 .image-card img {
   width: 300px;
   height: 200px;
@@ -128,17 +83,12 @@ section h2 {
   display: block;
   transition: transform 0.3s ease;
 }
-
-.image-card:hover {
-  transform: scale(1.03);
-}
-
+.image-card:hover { transform: scale(1.03); }
 .image-card .caption {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 0; left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   color: white;
   text-align: center;
   padding: 0.5rem;
@@ -146,9 +96,39 @@ section h2 {
   opacity: 0;
   transition: opacity 0.3s;
 }
+.image-card:hover .caption { opacity: 1; }
 
-.image-card:hover .caption {
-  opacity: 1;
+/* === GALLERY MODAL === */
+#galleryModal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#galleryModal img {
+  max-width: 90%;
+  max-height: 75%;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+#galleryCaption {
+  color: white;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+#closeModal {
+  position: absolute;
+  top: 20px; right: 30px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 /* === TIMELINE === */
@@ -158,38 +138,26 @@ section h2 {
   gap: 1rem;
   margin-top: 2rem;
 }
-
 .timeline .event {
   background: #fff;
   border-left: 5px solid #219ebc;
   padding: 1rem;
   font-weight: 600;
   transition: 0.3s;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.timeline .event:hover {
-  background: #e0f7fa;
-  transform: translateX(5px);
-}
-
-/* === BUTTONS === */
-button {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
   border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
-  margin-top: 1rem;
-  transition: background 0.3s;
+  overflow: hidden;
 }
-
-button:hover {
-  background: #0056b3;
+.timeline .event:hover { background: #e0f7fa; transform: translateX(5px); }
+.timeline .detail {
+  margin-top: 0.5rem;
+  font-weight: normal;
+  color: #333;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
 }
+.timeline .event.active .detail { max-height: 200px; }
 
 /* === FOOTER === */
 footer {
@@ -201,38 +169,11 @@ footer {
   margin-top: 2rem;
 }
 
-/* === QUOTES === */
-blockquote {
-  font-style: italic;
-  color: #444;
-  border-left: 4px solid #ffb703;
-  padding-left: 1rem;
-  margin-top: 2rem;
-}
-
-/* === ANIMATIONS === */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+/* === FADE-IN ANIMATION === */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-  nav a {
-    display: inline-block;
-    margin: 0.3rem 5px;
-  }
-
-  .image-card img {
-    width: 100%;
-    height: auto;
-  }
-
-  .hero h2 {
-    font-size: 1.5rem;
-  }
+  .image-card img { width: 100%; height: auto; }
+  .hero h2 { font-size: 1.5rem; }
 }

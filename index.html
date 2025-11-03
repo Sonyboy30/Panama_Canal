@@ -2,47 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panama Canal Museum | Home</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
     <h1>Panama Canal Museum</h1>
-    <p>Exploring the Dream, the Struggle, and the Legacy</p>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="historical.html">Historical Background</a>
+      <a href="construction.html">Construction & Challenges</a>
+      <a href="impact.html">Social & Political Impact</a>
+      <a href="significance.html">Legacy & Significance</a>
+      <a href="plaque.html">Plaque</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="dream.html">The Dream</a>
-    <a href="building.html">Building</a>
-    <a href="health.html">Health</a>
-    <a href="politics.html">Politics</a>
-    <a href="legacy.html">Legacy</a>
-    <a href="plaque.html">Plaque</a>
-  </nav>
+  <section class="hero fade-in">
+    <img src="assets/hero-canal.jpg" alt="Panama Canal aerial view" class="hero-img">
+    <div class="hero-text">
+      <h2>The Dream, The Struggle, The Legacy</h2>
+      <p>Explore the triumph of engineering, human will, and progress that reshaped global trade forever.</p>
+    </div>
+  </section>
 
-  <main>
-    <h2>Welcome to the Panama Canal Museum</h2>
-    <p>
-      The Panama Canal stands as one of humanity’s most impressive engineering feats.
-      Explore how ambition, innovation, and sacrifice shaped its creation and impact on global trade.
-    </p>
-
-    <iframe src="https://www.youtube.com/embed/BcOp4zOAR3Y" 
-            title="Panama Canal Documentary" 
-            allowfullscreen>
-    </iframe>
-
-    <p>
-      Built in the early 20th century, the Canal transformed global commerce by connecting
-      the Atlantic and Pacific Oceans. Its story is one of determination, disease, politics,
-      and progress — a symbol of both human ingenuity and imperial ambition.
-    </p>
-  </main>
+  <section class="video fade-in">
+    <h2>Experience the Canal</h2>
+    <div class="video-container">
+      <iframe width="100%" height="500" src="https://www.youtube.com/embed/BcOp4zOAR3Y" title="Panama Canal Documentary" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
 
   <footer>
     <p>Created by Arav & Deniz — © 2025 Panama Canal Digital Museum</p>
   </footer>
+
+  <script src="js/animate.js"></script>
 </body>
 </html>
